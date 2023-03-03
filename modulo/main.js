@@ -117,7 +117,9 @@ const getCapitalPais = function () {
 }
 
 const getCidades = function (siglaDoEstado) {
-
+    let siglaEstado = siglaDoEstado.toUpperCase();
+    let listaCidadesJSON;
+    let listaCidadesJSON = []
 }
 
 console.log(getCidades('SP'));
