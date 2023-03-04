@@ -210,9 +210,9 @@ const getCidades = function (siglaDoEstado) {
 
             
 
-            estadosBrasil.estadosCidades.estados.cidades.forEach(function (cidade) {
+            estado.cidades.forEach(function (cidade) {
 
-        listaCidadesArray.push(cidade.nomr)
+        listaCidadesArray.push(cidade.nome)
 
     })
 
