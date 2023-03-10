@@ -29,18 +29,24 @@ const getDadosEstado = function (siglaDoEstado) {
     let siglaEstado = siglaDoEstado.toUpperCase();
     let listaDadosJSON = false;
 
-    estadosBrasil.estadosCidades.estados.forEach(function (estado) {
-        if (estado.sigla == siglaEstado) {
-            listaDadosJSON = {};
+    if (regiao === '') {
+        listaRegiaoJSON = false;
+    } else if (!isNaN(regiao)) {
+        listaRegiaoJSON = false;
+    } else {
+        estadosBrasil.estadosCidades.estados.forEach(function (estado) {
+            if (estado.sigla == siglaEstado) {
+                listaDadosJSON = {};
 
-            listaDadosJSON.uf = estado.sigla;
-            listaDadosJSON.descricao = estado.nome;
-            listaDadosJSON.capital = estado.capital;
-            listaDadosJSON.regiao = estado.regiao;
+                listaDadosJSON.uf = estado.sigla;
+                listaDadosJSON.descricao = estado.nome;
+                listaDadosJSON.capital = estado.capital;
+                listaDadosJSON.regiao = estado.regiao;
 
-        }
+            }
 
-    })
+        })
+    }
 
     return listaDadosJSON;
 
@@ -51,16 +57,22 @@ const getCapitalEstado = function (siglaDoEstado) {
     let siglaEstado = siglaDoEstado.toUpperCase();
     let listaCapitalJSON = false;
 
-    estadosBrasil.estadosCidades.estados.forEach(function (estado) {
-        if (estado.sigla == siglaEstado) {
-            listaCapitalJSON = {};
+    if (regiao === '') {
+        listaRegiaoJSON = false;
+    } else if (!isNaN(regiao)) {
+        listaRegiaoJSON = false;
+    } else {
+        estadosBrasil.estadosCidades.estados.forEach(function (estado) {
+            if (estado.sigla == siglaEstado) {
+                listaCapitalJSON = {};
 
-            listaCapitalJSON.uf = estado.sigla;
-            listaCapitalJSON.descricao = estado.nome;
-            listaCapitalJSON.capital = estado.capital;
-        }
+                listaCapitalJSON.uf = estado.sigla;
+                listaCapitalJSON.descricao = estado.nome;
+                listaCapitalJSON.capital = estado.capital;
+            }
 
-    })
+        })
+    }
 
     return listaCapitalJSON;
 
